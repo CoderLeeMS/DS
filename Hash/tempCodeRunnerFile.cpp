@@ -1,0 +1,1 @@
+    InitLinkHashTable(table);
