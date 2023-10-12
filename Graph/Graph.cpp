@@ -423,7 +423,18 @@ void BFS_i_j(int i,int j,ALGraph LG){
     {
         /* code */
         int u = DeQueue(Q);
-
+        for(v = LG.vertices[u].first;v!=NULL;v = v->next){
+            if (visited[v->adjvex] == 0)
+            {
+                /* code */
+                visited[v->adjvex] = 1;
+                if(v->adjvex == j){
+                    return;
+                }
+                EnQueue(Q,v->adjvex);
+            }
+        }
     }
-    
 }   
+
+//*******************u到v的所有简单路径**************

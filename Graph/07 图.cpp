@@ -75,7 +75,7 @@ int DeQueue(Queue &Q){//出队
 	int p = Q.data[Q.front];
     Q.front = (Q.front +1)%MaxSize;
     return p;
-}
+}   
 
 
 //*******************练习题1*******************
