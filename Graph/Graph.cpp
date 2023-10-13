@@ -401,8 +401,14 @@ bool IsTree(ALGraph LG){
 }
 
 
-
- void getNum_BFS(int u,int visited[],ALGraph LG){
+/**
+ * @brief Get the Num BFS object 通过广度优先实现计数
+ * 
+ * @param u 
+ * @param visited 
+ * @param LG 
+ */
+void getNum_BFS(int u,int visited[],ALGraph LG){
     ArcNode *v;
     int  num = 1;
     visited[u] = 1;
