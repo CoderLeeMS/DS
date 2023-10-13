@@ -380,7 +380,7 @@ int getNum_DFS(int u,int visited[],ALGraph LG){
     visited[u] = 1;
     for(v = LG.vertices[u].first;v!=NULL;v = v->next){
         if(visited[v->adjvex] == 0){
-            num+=getNum(v->adjvex,visited,LG);
+            num+=getNum_DFS(v->adjvex,visited,LG);
         }
     }
     return num;
