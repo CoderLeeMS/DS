@@ -427,7 +427,7 @@ void getNum_BFS(int u,int visited[],ALGraph LG){
     }
 
 
- }
+}
 
 //*******************判断图中是否存在结点u到v的路径**************
 /**
