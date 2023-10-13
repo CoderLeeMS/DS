@@ -418,10 +418,10 @@ void getNum_BFS(int u,int visited[],ALGraph LG){
     while(!IsEmpty(Q)){
         u = DeQueue(Q);
         for(v = LG.vertices[u].first;v!=NULL;v = v->next){
-            if(visited[v.adjvex] == 0){
+            if(visited[v->adjvex] == 0){
                 num++;
-                visited[v.adjvex] =1;
-                EnQueue(Q,v.adjvex);
+                visited[v->adjvex] =1;
+                EnQueue(Q,v->adjvex);
             }
         }
     }
