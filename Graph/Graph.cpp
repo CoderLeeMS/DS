@@ -373,7 +373,7 @@ void BFSGraph(ALGraph LG){
  * @param LG 
  * @return int 
  */
-int getNum(int u,int visited[],ALGraph LG){
+int getNum_DFS(int u,int visited[],ALGraph LG){
     int num = 0;
     ArcNode *v;
     printf("%d",u);
@@ -392,13 +392,36 @@ bool IsTree(ALGraph LG){
     for(int i  = 0;i<n;i++){
         visited[i] = 0;
     }
-    int num = getNum(0,visited,LG);
+    int num = getNum_DFS(0,visited,LG);
     if(num == LG.vertexNum && LG.vertexNum - 1 == LG.ArcNum){
         return true;
     }else{
         return false;
     }
 }
+
+
+
+ void getNum_BFS(int u,int visited[],ALGraph LG){
+    ArcNode *v;
+    int  num = 1;
+    visited[u] = 1;
+    Queue Q;
+    InitQueue(Q);
+    EnQueue(Q,u);
+    while(!IsEmpty(Q)){
+        u = DeQueue(Q);
+        for(v = LG.vertices[u].first;v!=NULL;v = v->next){
+            if(visited[v.adjvex] == 0){
+                num++;
+                visited[v.adjvex] =1;
+                EnQueue(Q,v.adjvex);
+            }
+        }
+    }
+
+
+ }
 
 //*******************判断图中是否存在结点u到v的路径**************
 /**
