@@ -96,8 +96,9 @@ void EnQueue(Queue &Q,int x){
 }
 
 int DeQueue(Queue &Q){
-    return Q.data[Q.front];
+    int p = Q.data[Q.front];
     Q.front = (Q.front+1) % MaxSize;
+    return p;
 }
 
 bool IsEmpty(Queue &Q){//队列判空
