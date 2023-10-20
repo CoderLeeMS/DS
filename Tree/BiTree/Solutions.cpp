@@ -82,10 +82,10 @@ void PreOrder_NoRe(BTree bt){
     while(p||IsEmpty_Stack(S)){
         if(p){
             Push(S,p);
+            visit(p);
             p = p->lchild;
         }else{
             p = Pop(S);
-            visit(p);
             p = p->rchild;
         }
     }
@@ -104,11 +104,27 @@ void InOrder_NoRe(BTree bt){
     while(p||IsEmpty_Stack(S)){
         if(p){
             Push(S,p);
-            visit(p);
             p = p->lchild;
         }else{
             p = Pop(S);
+            visit(p);
             p = p->rchild;
         }
+    }
+}
+
+/**
+ * @brief 层序遍历
+ * 
+ * @param bt 
+ */
+void LevelOrder(BTree bt){
+    Queue Q;
+    InitQueue(Q);
+    EnQueue(Q,bt);
+    BTNode bt;
+    while(IsEmpty_Queue(Q)){
+        DeQueu(Q);
+
     }
 }
