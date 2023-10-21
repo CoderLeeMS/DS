@@ -10,9 +10,7 @@
 
 int main()
 {   
-    MGraph G;
-    CerateMGraph(&G);
-    printGraph(G);
+    
     
 
     return 0;
