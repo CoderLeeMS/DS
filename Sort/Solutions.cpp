@@ -72,3 +72,34 @@ void Insert_Sort(SqList * list){
 void BInsert_Sort(SqList * lsit){
     
 }
+
+
+
+
+void QuickSort(int arr[], int l,int r) {
+    if (l > r) {
+        return;
+    }
+    int left = l;
+    int right = r;
+    int pivot = arr[left];
+    while (left < right) {
+        while (left < right && arr[right] >= pivot) {
+            right--;
+        }
+        if (arr[right] < pivot) {
+            arr[left] = arr[right];
+        }
+        while (left < right && arr[left] <= pivot) {
+            left++;
+        }
+        if (arr[left] > pivot) {
+            arr[right] = arr[left];
+        }
+        if (left >= right) {
+            arr[left] = pivot;
+        }
+    }
+    QuickSort(arr, l, right - 1);
+    QuickSort(arr, right + 1, r);
+}
