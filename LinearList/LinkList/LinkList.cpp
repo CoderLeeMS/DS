@@ -110,6 +110,8 @@ LinkList List_Revrse(LinkList &L)
 }
 
 
+
+
 /**
  * @brief 删除最小的元素（唯一）
  * 
@@ -168,4 +170,41 @@ void List_Order(LinkList L)
         s->next = L->next;
         L->next = s;
     }   
+}
+
+
+
+//*********************真题*******************//
+/**
+ * @brief 逆置链表
+ * 
+ * @param L 
+ */
+void List_Revrse2(LinkList &L){
+    LNode * p = L -> next;
+    L->next = NULL;
+    LNode * q;
+    while(p!=NULL){
+        q = p->next;
+        p->next = L->next;
+        L->next = p;
+        p = q;
+    }
+}
+
+
+/**
+ * @brief 删除链表p结点的前驱
+ * 
+ * @param L 
+ */
+void Delete_p_front(LinkList &L,int n){
+    LNode *r,*q,*t;
+    q = L->next;
+    while(n != q->data){//通过q指针来找到p结点，
+        t = r;
+        r = q;
+        q = q->next;
+    }
+    t->next = r->next;
 }
